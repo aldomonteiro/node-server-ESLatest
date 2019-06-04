@@ -2,7 +2,7 @@
 
 ### Getting Started
 
-First we'll install `@babel/cli`, `@babel/core` and `@babel/preset-env`.
+First we'll install `@babel/cli`, `@babel/core`, `@babel/node` and `@babel/preset-env`.
 
 ```shell
 $ npm install --save-dev @babel/cli @babel/core @babel/node @babel/preset-env
@@ -21,6 +21,8 @@ This will host any options we might want to configure `babel` with.
   "presets": ["@babel/preset-env"]
 }
 ```
+
+`preset-env` will compile ES2015+ down to ES5 just like using all the presets together and thus is more future proof.
 
 Then create our main file in `src/index.js`.
 
@@ -82,7 +84,7 @@ Due performance issues, it's not recommended to use babel in production, so, you
   }
 ```
 
-Next let's add a new task: `npm run serve`, to use oure recently built code:
+Next let's add a new task: `npm run serve`, to use our transpiled code:
 
 ```diff
   "scripts": {
